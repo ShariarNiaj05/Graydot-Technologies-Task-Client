@@ -1,6 +1,28 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Logout Successful",
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: `${error.message}`,
+          text: "Something went wrong!",
+        });
+      });
+  };
+
   const activeLinkStyle = ({ isActive, isPending }) =>
     isPending
       ? "pending"
@@ -56,9 +78,28 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        <Link to={"/login"} className="btn">
-          Login
-        </Link>
+        {user?.email ? (
+          <div>
+            <Link to={"/dashboard"}>
+              <button className=" btn bg-[#33547D] hover:bg-[#33547D text-white">
+                Dashboard
+              </button>
+            </Link>
+            <button
+              onClick={handleLogOut}
+              className=" btn bg-[#33547D] hover:bg-[#33547D] text-white"
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <Link
+            to={"/login"}
+            className="btn bg-[#33547D] hover:bg-[#33547D] text-white"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
