@@ -23,7 +23,7 @@ const HomeUsers = () => {
         {/* for the initial load, if user get the data will load  */}
         {users &&
           homeUsers.map((user) => (
-            <div key={user.id} className="card bg-[#77B7DD] ">
+            <div key={user.id} className="card bg-[#77B7DD] hover:bg-[#33547D] hover:text-white">
               <div className="card-body ">
                 <h2 className="card-title">Name: {user.name}</h2>
                 <p>Email: {user.email}</p>
