@@ -16,13 +16,13 @@ const UserStats = () => {
   const [selectedUserType, setSelectedUserType] = useState("phone");
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-users")
+    fetch("https://graydot-technologies-task-server.vercel.app/all-users")
       .then((res) => res.json())
       .then((data) => setUserCount(data.usersCount));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-users")
+    fetch("https://graydot-technologies-task-server.vercel.app/all-users")
       .then((res) => res.json())
       .then((data) => setUserData(data.result));
   }, []);
