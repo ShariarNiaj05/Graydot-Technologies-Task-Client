@@ -1,8 +1,25 @@
-# React + Vite
+# Graydot Technologies Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Explore- [https://graydot-task.web.app]
 
-Currently, two official plugins are available:
+## Here are some project features and functionalities
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Navbar
+* Project Name, Menu to navigate, Login button (logout and dashboard button if the user is loggedin).
+
+### Home Page
+* Simple banner section.
+* Dynamic user data.
+
+### About Us Page
+* Simple demo information with one image.
+
+### Contact Us Page
+* My contact information with background image.
+
+
+### Dashboard
+* User interactive dashboard have the option to select different options to show different data.
+
+
+
